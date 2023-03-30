@@ -17,7 +17,13 @@ function About() {
       </Styled.LeftColumn>
       <img src="https://i.imgur.com/EQYxQF5.png?1" alt="bennertech" />
       <Styled.RightColumn>
-        <p>Right</p>
+        {portfolioData.jobStats.map((job) => (
+          <JobInfo
+            key={job.id}
+            title={job.title}
+            description={job.description}
+          />
+        ))}
       </Styled.RightColumn>
     </Styled.Container>
   );

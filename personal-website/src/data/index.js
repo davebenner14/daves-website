@@ -22,4 +22,26 @@ export const portfolioData = {
       description: "Website design and development",
     },
   ],
+  jobStats: [
+    {
+      id: 1,
+      title: "Years of Experience",
+      description: "99",
+    },
+    {
+      id: 2,
+      title: "Satisfied Clients",
+      description: "100%",
+    },
+    {
+      id: 3,
+      title: "Clients Worldwide",
+      description: "All the clients",
+    },
+    {
+      id: 4,
+      title: "Projects Completed",
+      description: "Infinite",
+    },
+  ],
 };

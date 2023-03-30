@@ -7,10 +7,12 @@ function Skills() {
     <Container>
       {portfolioData.skills.map((skill) => (
         <div key={skill.id}>
-          <Pill>
-            <img src={skill.image} alt={skill.title} />
-          </Pill>
-          <p>{skill.title}</p>
+          <a href={skill.link} target="_blank" rel="noopener noreferrer">
+            <Pill>
+              <img src={skill.image} alt={skill.title} />
+            </Pill>
+            <p>{skill.title}</p>
+          </a>
         </div>
       ))}
     </Container>

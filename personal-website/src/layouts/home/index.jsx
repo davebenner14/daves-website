@@ -3,6 +3,7 @@ import Headline from "../../components/Headline";
 import Nav from "../../components/Nav";
 import Section from "../../components/Section";
 import About from "./modules/About";
+import Clients from "./modules/Clients";
 import { Container } from "./styled";
 
 function Home() {
@@ -13,9 +14,10 @@ function Home() {
       <Section>
         <About />
       </Section>
-      <Section heading="Clients">
-        <p>Clients</p>
-      </Section>
+      {/* <Section heading="Clients">
+        <Clients />
+      </Section> */}
+      {/* This Section is currently grayed out because there are no Clients... once acquired enough, can easily add them with their logos on /Clients folder */}
       <Section heading="Skills">
         <p>Skills</p>
       </Section>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
 
@@ -19,15 +20,15 @@ export const Container = styled.div`
   img {
     width: 80px;
     height: 80px;
-    /* object-fit: contain; */
+    object-fit: contain;
   }
 `;
 
 export const Pill = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: space-evenly;
-  background-color: lightgray;
+  align-items: center;
   padding: 25px;
   border-radius: 50%;
+  margin: 12.5px;
 `;

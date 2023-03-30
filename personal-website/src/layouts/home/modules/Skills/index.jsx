@@ -1,5 +1,6 @@
 import React from "react";
 import { portfolioData } from "../../../../data";
+import { Container, Pill } from "./styled";
 
 function Skills() {
   return (

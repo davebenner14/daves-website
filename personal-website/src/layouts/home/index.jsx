@@ -4,6 +4,7 @@ import Nav from "../../components/Nav";
 import Section from "../../components/Section";
 import About from "./modules/About";
 import Clients from "./modules/Clients";
+import Skills from "./modules/Skills";
 import { Container } from "./styled";
 
 function Home() {
@@ -19,7 +20,7 @@ function Home() {
       </Section> */}
       {/* This Section is currently grayed out because there are no Clients... once acquired enough, can easily add them with their logos on /Clients folder */}
       <Section heading="Skills">
-        <p>Skills</p>
+        <Skills />
       </Section>
       <Section heading="Education & Experience">
         <p>Experience</p>

@@ -1,4 +1,5 @@
 import React from "react";
+import Contact from "../../components/Contact";
 import Headline from "../../components/Headline";
 import Nav from "../../components/Nav";
 import Section from "../../components/Section";
@@ -31,7 +32,7 @@ function Home() {
         <Projects />
       </Section>
       <Section heading="Contact">
-        <p>Contact</p>
+        <Contact />
       </Section>
     </Container>
   );

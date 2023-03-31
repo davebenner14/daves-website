@@ -2,7 +2,7 @@ export const portfolioData = {
   country: "Canada",
   name: "David Benner",
   email: "davebenner14@gmail.com",
-  phone: "123",
+  phone: "416-970-4047",
   jobTitle: "Fullstack Software Engineer",
   jobInfo: [
     {

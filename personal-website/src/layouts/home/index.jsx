@@ -25,7 +25,6 @@ function Home() {
       </Section>
       <Section heading="Education & Experience">
         <Experience />
-        {/* <p>Experience</p> */}
       </Section>
       <Section heading="Projects">
         <p>Projects</p>

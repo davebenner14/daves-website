@@ -12,6 +12,7 @@ function Experience() {
               <img src={experience.image} alt={experience.title} />
             </Pill>
             <p>{experience.title}</p>
+            <p>{experience.year}</p>
           </a>
         </div>
       ))}

@@ -163,4 +163,38 @@ export const portfolioData = {
       link: "https://docs.aws.amazon.com/",
     },
   ],
+  experience: [
+    // can set it up this way in the future if we want
+    // {
+    //   id: 1,
+    //   title: "",
+    //   company: "",
+    //   year: "",
+    // }
+    {
+      id: 1,
+      image:
+        "https://upload.wikimedia.org/wikipedia/en/f/f4/General_Assembly_logo.svg",
+      title: "General Assembly",
+      link: "https://generalassemb.ly/?topic=&mkt_account_id=1056949875&mkt_campaign_id=2016666190&mkt_ad_group_id=70434039814&mkt_device_type=c&mkt_keyword=general%20assembly&mkt_matchtype=e&mkt_placement=&mkt_ad_id=524364734851&mkt_network=g&mkt_target_id=aud-1433778186601:kwd-300765785657&mkt_feed_item_id=&utm_source=google&utm_medium=paid-search-bra&utm_campaign=TS:TX:BRA:TOR:BR:GeneralAssembly&utm_content=campus-lead-lander&utm_term=general%20assembly&gclid=Cj0KCQjwiZqhBhCJARIsACHHEH-V_uIvBnTcIHiEJTcNmRFXzuvBM0dcF0UB04GTnz4wMEjCgUZ6CMYaAnkSEALw_wcB&gclsrc=aw.ds",
+    },
+    {
+      id: 2,
+      image: "",
+      title: "",
+      link: "",
+    },
+    {
+      id: 3,
+      image: "",
+      title: "",
+      link: "",
+    },
+    {
+      id: 4,
+      image: "",
+      title: "",
+      link: "",
+    },
+  ],
 };

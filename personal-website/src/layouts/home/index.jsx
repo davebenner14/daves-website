@@ -4,6 +4,7 @@ import Nav from "../../components/Nav";
 import Section from "../../components/Section";
 import About from "./modules/About";
 import Clients from "./modules/Clients";
+import Experience from "./modules/Experience";
 import Skills from "./modules/Skills";
 import { Container } from "./styled";
 
@@ -23,7 +24,8 @@ function Home() {
         <Skills />
       </Section>
       <Section heading="Education & Experience">
-        <p>Experience</p>
+        <Experience />
+        {/* <p>Experience</p> */}
       </Section>
       <Section heading="Projects">
         <p>Projects</p>

@@ -197,10 +197,10 @@ export const portfolioData = {
     },
     {
       id: 4,
-      image: "",
-      title: "",
-      link: "",
-      year: "",
+      image: "https://www.wlu.ca/images/general/desktop_logo.png",
+      title: "Wilfrid Laurier University",
+      link: "https://www.wlu.ca/",
+      year: "2009 - 2013",
     },
   ],
 };

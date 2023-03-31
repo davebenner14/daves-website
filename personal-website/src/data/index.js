@@ -162,15 +162,14 @@ export const portfolioData = {
       title: "AWS",
       link: "https://docs.aws.amazon.com/",
     },
+    {
+      id: 14,
+      image: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg",
+      title: "Material UI",
+      link: "https://mui.com/",
+    },
   ],
   experience: [
-    // can set it up this way in the future if we want
-    // {
-    //   id: 1,
-    //   title: "",
-    //   company: "",
-    //   year: "",
-    // }
     {
       id: 1,
       image:
@@ -201,6 +200,36 @@ export const portfolioData = {
       title: "Wilfrid Laurier University",
       link: "https://www.wlu.ca/",
       year: "2009 - 2013",
+    },
+  ],
+  projects: [
+    {
+      id: 1,
+      title: "TimeCapsule",
+      category: "React",
+      image: "",
+      link: "",
+    },
+    {
+      id: 2,
+      title: "GymBuddy",
+      category: "Python",
+      image: "",
+      link: "",
+    },
+    {
+      id: 3,
+      title: "Rate-My-Kitten",
+      category: "JavaScript",
+      image: "",
+      link: "",
+    },
+    {
+      id: 4,
+      title: "projectConnect4",
+      category: "JavaScript",
+      image: "",
+      link: "",
     },
   ],
 };

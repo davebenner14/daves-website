@@ -6,7 +6,7 @@ function Headline() {
   return (
     <Container>
       <p>
-        {portfolioData.name} - {portfolioData.jobTitle} - Based in{" "}
+        {portfolioData.name} - {portfolioData.jobTitle} - Mentor - Based in{" "}
         {portfolioData.country}
       </p>
     </Container>

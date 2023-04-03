@@ -14,9 +14,9 @@ function Home() {
   return (
     <Container>
       <Nav />
-      <Headline />
       <Section>
         <About />
+        <Headline />
       </Section>
       {/* <Section heading="Clients">
         <Clients />

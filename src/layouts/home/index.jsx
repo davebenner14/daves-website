@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Contact from "../../components/Contact";
 import Headline from "../../components/Headline";
 import Nav from "../../components/Nav";
@@ -11,6 +11,18 @@ import Skills from "./modules/Skills";
 import { Container } from "./styled";
 
 function Home() {
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const [experienceVisible, setExperienceVisible] = useState(false);
+  const [projectsVisible, setProjectsVisible] = useState(false);
+  const [contactVisible, setContactVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setSkillsVisible(true), 500);
+    setTimeout(() => setExperienceVisible(true), 1000);
+    setTimeout(() => setProjectsVisible(true), 1500);
+    setTimeout(() => setContactVisible(true), 2000);
+  }, []);
+
   return (
     <Container>
       <Nav />
@@ -18,20 +30,19 @@ function Home() {
         <About />
         <Headline />
       </Section>
-      {/* <Section heading="Clients">
-        <Clients />
-      </Section> */}
-      {/* This Section is currently grayed out because there are no Clients... once acquired enough, can easily add them with their logos on /Clients folder */}
-      <Section heading="Skills">
+      <Section className={skillsVisible ? "fade-in" : ""} heading="Skills">
         <Skills />
       </Section>
-      <Section heading="Education & Experience">
+      <Section
+        className={experienceVisible ? "fade-in" : ""}
+        heading="Education & Experience"
+      >
         <Experience />
       </Section>
-      <Section heading="Projects">
+      <Section className={projectsVisible ? "fade-in" : ""} heading="Projects">
         <Projects />
       </Section>
-      <Section heading="Contact">
+      <Section className={contactVisible ? "fade-in" : ""} heading="Contact">
         <Contact />
       </Section>
     </Container>

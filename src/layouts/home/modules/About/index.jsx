@@ -15,10 +15,9 @@ function About() {
           />
         ))}
       </Styled.LeftColumn>
-      <div className="image-container">
-        <img src="https://i.imgur.com/sQM5hTD.png" alt="David Benner" />
-        <div className="text-overlay">David Benner</div>
-      </div>
+      <Styled.ImageContainer>
+        <img src="https://i.imgur.com/JdWh5Jy.png" alt="David Benner" />
+      </Styled.ImageContainer>
       {/* <Styled.RightColumn>
         {portfolioData.jobStats.map((job) => (
           <JobInfo

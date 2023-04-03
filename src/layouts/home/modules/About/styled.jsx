@@ -32,3 +32,16 @@ export const LeftColumn = styled.div`
 //     text-align: center;
 //   }
 // `;
+
+export const ImageContainer = styled.div`
+  position: relative;
+`;
+
+export const TextOverlay = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: white;
+`;

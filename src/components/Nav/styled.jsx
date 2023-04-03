@@ -1,12 +1,25 @@
 import styled from "styled-components";
 
-export const Container = styled.nav`
+export const Nav = styled.nav`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center;
+  height: 80px;
+  padding: 0 24px;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 `;
 
 export const Logo = styled.img`
-  width: 200px;
+  height: 100%;
+  object-fit: contain;
+`;
+
+export const Name = styled.div`
+  margin-left: 8px;
+  font-size: 24px;
+  font-weight: bold;
 `;

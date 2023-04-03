@@ -25,10 +25,10 @@ export const LeftColumn = styled.div`
   }
 `;
 
-export const RightColumn = styled(LeftColumn)`
-  text-align: right;
-  @media (max-width: 768px) {
-    width: 100%;
-    text-align: center;
-  }
-`;
+// export const RightColumn = styled(LeftColumn)`
+//   text-align: right;
+//   @media (max-width: 768px) {
+//     width: 100%;
+//     text-align: center;
+//   }
+// `;

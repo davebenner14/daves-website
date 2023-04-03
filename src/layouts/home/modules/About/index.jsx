@@ -15,8 +15,11 @@ function About() {
           />
         ))}
       </Styled.LeftColumn>
-      <img src="https://i.imgur.com/EQYxQF5.png?1" alt="bennertech" />
-      <Styled.RightColumn>
+      <div className="image-container">
+        <img src="assets/pngegg.png" alt="David Benner" />
+        <div className="text-overlay">David Benner</div>
+      </div>
+      {/* <Styled.RightColumn>
         {portfolioData.jobStats.map((job) => (
           <JobInfo
             key={job.id}
@@ -24,7 +27,7 @@ function About() {
             description={job.description}
           />
         ))}
-      </Styled.RightColumn>
+      </Styled.RightColumn> */}
     </Styled.Container>
   );
 }

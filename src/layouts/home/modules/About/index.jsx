@@ -16,7 +16,10 @@ function About() {
         ))}
       </Styled.LeftColumn>
       <div className="image-container">
-        <img src="/assets/pngegg.png" alt="David Benner" />
+        <img
+          src="https://raw.githubusercontent.com/davebenner14/daves-website/b291c77e21e5c0d341dcad79e3de7a81a3be3a71/assets/pngegg.png"
+          alt="David Benner"
+        />
         <div className="text-overlay">David Benner</div>
       </div>
       {/* <Styled.RightColumn>

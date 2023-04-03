@@ -19,22 +19,6 @@ function Navbar() {
             alt="David Benner"
             style={{ maxWidth: "40px", maxHeight: "60px" }}
           />
-
-          <img
-            src="https://i.imgur.com/JdWh5Jy.png"
-            alt="David Benner"
-            style={{ maxWidth: "40px", maxHeight: "60px" }}
-          />
-          {/* <img
-            src="https://imgur.com/JdWh5Jy"
-            alt="David Benner"
-            style={{ maxWidth: "40px", maxHeight: "60px" }}
-          /> */}
-          <img
-            src="https://i.imgur.com/JdWh5Jys.png"
-            alt="David Benner"
-            style={{ maxWidth: "40px", maxHeight: "60px" }}
-          />
         </div>
         <Name onClick={handleScrollToTop}>David Benner</Name>
       </div>

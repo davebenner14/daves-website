@@ -14,7 +14,7 @@ function Navbar() {
         onClick={handleScrollToTop}
       >
         <Logo
-          src="./assets/pngegg.png"
+          src="/assets/pngegg.png"
           alt="David Benner"
           style={{ maxWidth: "40px", maxHeight: "60px" }}
         />

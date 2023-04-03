@@ -70,3 +70,8 @@ body {
   background-color: white;
   color: black;
 }
+
+.MuiButtonBase-root {
+  background-color: #213547 !important;
+  color: white !important;
+}

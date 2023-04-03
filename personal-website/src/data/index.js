@@ -207,29 +207,33 @@ export const portfolioData = {
       id: 1,
       title: "TimeCapsule",
       category: "React",
-      image: "",
-      link: "",
+      image:
+        "https://camo.githubusercontent.com/db03d5825c281e599effdf3b4ad90e81d734504e1ab5913a374878cfc5376459/68747470733a2f2f692e696d6775722e636f6d2f5047744e4b53772e706e67",
+      link: "https://github.com/davebenner14/TimeCapsule",
     },
     {
       id: 2,
       title: "GymBuddy",
       category: "Python",
-      image: "",
-      link: "",
+      image:
+        "https://user-images.githubusercontent.com/119465113/219563025-ec15882f-875f-4fb0-9411-205442ed067b.png",
+      link: "https://github.com/davebenner14/Gym-Buddy",
     },
     {
       id: 3,
       title: "Rate-My-Kitten",
       category: "JavaScript",
-      image: "",
-      link: "",
+      image:
+        "https://github.com/davebenner14/Rate-My-Kitten/blob/main/Assets/Screenshot%202023-01-26%20at%209.33.59%20PM.png?raw=true",
+      link: "https://github.com/davebenner14/Rate-My-Kitten",
     },
     {
       id: 4,
       title: "projectConnect4",
       category: "JavaScript",
-      image: "",
-      link: "",
+      image:
+        "https://raw.git.generalassemb.ly/davebenner14/projectConnect4/main/In_game_photos/screenshot1.png?token=AAALNQCH6UZ3ZDKKZEP6HY3EGBPA4",
+      link: "https://github.com/davebenner14/projectConnect4",
     },
   ],
 };

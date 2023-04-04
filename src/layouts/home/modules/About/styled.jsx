@@ -33,6 +33,14 @@ export const JobTitle = styled.h4`
 export const JobDescription = styled.p`
   font-size: 1rem;
   line-height: 1.5;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: ${(props) =>
+      `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+        Math.random() * 256
+      )}, ${Math.floor(Math.random() * 256)})`};
+  }
 `;
 
 export const EmailLink = styled.a`
@@ -59,13 +67,4 @@ export const RotatingImage = styled.img`
 
   &:hover {
   }
-`;
-
-export const TextOverlay = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2em;
-  color: white;
 `;

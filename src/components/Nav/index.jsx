@@ -27,7 +27,9 @@ function Navbar() {
             style={{ maxWidth: "40px", maxHeight: "60px" }}
           />
         </div>
-        <Name onClick={handleScrollToTop}>David Benner</Name>
+        <Name className="black-text" onClick={handleScrollToTop}>
+          David Benner
+        </Name>
       </div>
       <button onClick={handleToggleDarkMode}>
         {isDarkMode ? "Light Mode" : "Night Mode"}

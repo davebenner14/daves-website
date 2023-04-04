@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Contact from "../../components/Contact";
 import Headline from "../../components/Headline";
 import Nav from "../../components/Nav";
@@ -11,66 +11,55 @@ import Skills from "./modules/Skills";
 import { Container } from "./styled";
 
 function Home() {
-  const [visibleSections, setVisibleSections] = useState([]);
-
-  const handleIntersection = (entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .map((entry) => entry.target.id);
-    setVisibleSections(visible);
-  };
-
   useEffect(() => {
     const options = {
       rootMargin: "0px",
       threshold: 0.5,
     };
-    const observer = new IntersectionObserver(handleIntersection, options);
-
-    const sections = document.querySelectorAll("section[id]");
-    sections.forEach((section) => observer.observe(section));
-
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, 1000);
+        }
+      });
+    }, options);
+    document.querySelectorAll("section[id]").forEach((section) => {
+      observer.observe(section);
+    });
     return () => {
-      sections.forEach((section) => observer.unobserve(section));
+      observer.disconnect();
     };
   }, []);
 
   return (
     <Container>
       <Nav />
-      <Section
-        id="about"
-        className={visibleSections.includes("about") ? "visible" : ""}
-      >
+      <Section id="about" ref={useRef()} className="hidden">
         <About />
         <Headline />
       </Section>
-      <Section
-        id="skills"
-        className={visibleSections.includes("skills") ? "visible" : ""}
-        heading="Skills"
-      >
+      <Section id="skills" ref={useRef()} className="hidden" heading="Skills">
         <Skills />
       </Section>
       <Section
         id="experience"
-        className={visibleSections.includes("experience") ? "visible" : ""}
+        ref={useRef()}
+        className="hidden"
         heading="Education & Experience"
       >
         <Experience />
       </Section>
       <Section
         id="projects"
-        className={visibleSections.includes("projects") ? "visible" : ""}
+        ref={useRef()}
+        className="hidden"
         heading="Projects"
       >
         <Projects />
       </Section>
-      <Section
-        id="contact"
-        className={visibleSections.includes("contact") ? "visible" : ""}
-        heading="Contact"
-      >
+      <Section id="contact" ref={useRef()} className="hidden" heading="Contact">
         <Contact />
       </Section>
     </Container>

@@ -11,6 +11,13 @@ export const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    height: auto;
+    padding-bottom: 24px;
+    justify-content: center;
+  }
 `;
 
 export const Logo = styled.img`

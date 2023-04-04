@@ -10,16 +10,19 @@ export const portfolioData = {
       title: "About me",
       description:
         "Hello, my name is David. I specialize in crafting visually stunning applications and websites.",
+      color: null, // added property for randomized color value
     },
     {
       id: 2,
       title: "Contact",
       description: "davebenner14@gmail.com",
+      color: null, // added property for randomized color value
     },
     {
       id: 3,
       title: "Services",
       description: "Website design and development",
+      color: null, // added property for randomized color value
     },
   ],
   jobStats: [

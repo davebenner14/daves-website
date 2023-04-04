@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Contact from "../../components/Contact";
 import Headline from "../../components/Headline";
 import Nav from "../../components/Nav";
@@ -11,55 +11,23 @@ import Skills from "./modules/Skills";
 import { Container } from "./styled";
 
 function Home() {
-  useEffect(() => {
-    const options = {
-      rootMargin: "0px",
-      threshold: 0.5,
-    };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add("visible");
-          }, 1000);
-        }
-      });
-    }, options);
-    document.querySelectorAll("section[id]").forEach((section) => {
-      observer.observe(section);
-    });
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <Container>
       <Nav />
-      <Section id="about" ref={useRef()} className="hidden">
+      <Section id="about">
         <About />
         <Headline />
       </Section>
-      <Section id="skills" ref={useRef()} className="hidden" heading="Skills">
+      <Section id="skills" heading="Skills">
         <Skills />
       </Section>
-      <Section
-        id="experience"
-        ref={useRef()}
-        className="hidden"
-        heading="Education & Experience"
-      >
+      <Section id="experience" heading="Education & Experience">
         <Experience />
       </Section>
-      <Section
-        id="projects"
-        ref={useRef()}
-        className="hidden"
-        heading="Projects"
-      >
+      <Section id="projects" heading="Projects">
         <Projects />
       </Section>
-      <Section id="contact" ref={useRef()} className="hidden" heading="Contact">
+      <Section id="contact" heading="Contact">
         <Contact />
       </Section>
     </Container>

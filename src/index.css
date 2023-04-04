@@ -106,3 +106,7 @@ body.dark-mode a:hover {
   transition-delay: 1s;
   transition: opacity 1s, transform 1s, filter 1s;
 }
+
+.job-info .description {
+  transition: color 0.5s;
+}

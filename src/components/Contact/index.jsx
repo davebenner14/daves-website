@@ -29,7 +29,7 @@ export default function Contact() {
         variant="contained"
         size="large"
         onClick={handleOpen}
-        StartIcon={<ContactIcon />}
+        startIcon={<ContactIcon />}
       >
         Contact David
       </Button>

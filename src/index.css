@@ -94,10 +94,15 @@ body.dark-mode a:hover {
 
 .hidden {
   opacity: 0;
-  transition: opacity 1s;
+  transform: translateX(-100%);
+  filter: blur(5px);
+  transition: opacity 1s, transform 1s, filter 1s;
 }
 
 .visible {
   opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
   transition-delay: 1s;
+  transition: opacity 1s, transform 1s, filter 1s;
 }

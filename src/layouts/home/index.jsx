@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Contact from "../../components/Contact";
 import Headline from "../../components/Headline";
 import Nav from "../../components/Nav";
@@ -11,23 +11,66 @@ import Skills from "./modules/Skills";
 import { Container } from "./styled";
 
 function Home() {
+  const [visibleSections, setVisibleSections] = useState([]);
+
+  const handleIntersection = (entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .map((entry) => entry.target.id);
+    setVisibleSections(visible);
+  };
+
+  useEffect(() => {
+    const options = {
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <Container>
       <Nav />
-      <Section>
+      <Section
+        id="about"
+        className={visibleSections.includes("about") ? "visible" : ""}
+      >
         <About />
         <Headline />
       </Section>
-      <Section heading="Skills">
+      <Section
+        id="skills"
+        className={visibleSections.includes("skills") ? "visible" : ""}
+        heading="Skills"
+      >
         <Skills />
       </Section>
-      <Section heading="Education & Experience">
+      <Section
+        id="experience"
+        className={visibleSections.includes("experience") ? "visible" : ""}
+        heading="Education & Experience"
+      >
         <Experience />
       </Section>
-      <Section heading="Projects">
+      <Section
+        id="projects"
+        className={visibleSections.includes("projects") ? "visible" : ""}
+        heading="Projects"
+      >
         <Projects />
       </Section>
-      <Section heading="Contact">
+      <Section
+        id="contact"
+        className={visibleSections.includes("contact") ? "visible" : ""}
+        heading="Contact"
+      >
         <Contact />
       </Section>
     </Container>

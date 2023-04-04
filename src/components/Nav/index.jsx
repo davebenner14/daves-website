@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import SocialMedia from "../SocialMedia";
 import { Nav, Logo, Name } from "./styled";
 
 function Navbar() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleToggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle("dark-mode");
+  };
+
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <Nav>
+    <Nav isDarkMode={isDarkMode}>
       <div
         style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
         onClick={handleScrollToTop}
@@ -22,6 +29,9 @@ function Navbar() {
         </div>
         <Name onClick={handleScrollToTop}>David Benner</Name>
       </div>
+      <button onClick={handleToggleDarkMode}>
+        {isDarkMode ? "Light Mode" : "Night Mode"}
+      </button>
       <SocialMedia />
     </Nav>
   );

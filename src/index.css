@@ -19,6 +19,7 @@ a {
   color: gray;
   text-decoration: inherit;
 }
+
 a:hover {
   color: black;
 }
@@ -27,6 +28,14 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease-out;
+}
+
+body.dark-mode {
+  background-color: #242424;
+  color: white;
 }
 
 h1 {
@@ -45,9 +54,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: gray;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -58,20 +69,21 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
 }
 
-body {
-  background-color: white;
-  color: black;
-}
-
 .MuiButtonBase-root {
   background-color: #213547 !important;
   color: white !important;
+}
+
+body.dark-mode a:hover {
+  color: white;
 }

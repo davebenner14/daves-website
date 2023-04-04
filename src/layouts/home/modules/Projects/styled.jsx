@@ -37,7 +37,6 @@ export const Image = styled.img`
 export const Category = styled.p`
   font-size: 0.6rem;
   margin: 0;
-  color: gray;
   padding-top: 10px;
 `;
 
@@ -45,7 +44,6 @@ export const Title = styled.p`
   font-size: 1rem;
   margin: 0;
   font-weight: 500;
-  color: black;
   text-align: center;
 
   @media (max-width: 768px) {

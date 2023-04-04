@@ -10,6 +10,24 @@ function About() {
     setRotate(!rotate);
   };
 
+  const formattedEmail = (
+    <a href={`mailto:${portfolioData.email}`}>{portfolioData.email}</a>
+  );
+
+  const jobInfoWithClickableEmail = portfolioData.jobInfo.map((job) => {
+    if (job.title === "Contact") {
+      return {
+        ...job,
+        description: formattedEmail,
+        isEmail: true,
+      };
+    }
+    return {
+      ...job,
+      isEmail: false,
+    };
+  });
+
   return (
     <Styled.Container>
       <Styled.ImageContainer onClick={handleRotate}>
@@ -21,11 +39,12 @@ function About() {
       </Styled.ImageContainer>
 
       <Styled.LeftColumn>
-        {portfolioData.jobInfo.map((job) => (
+        {jobInfoWithClickableEmail.map((job) => (
           <JobInfo
             key={job.id}
             title={job.title}
             description={job.description}
+            isEmail={job.isEmail}
           />
         ))}
       </Styled.LeftColumn>

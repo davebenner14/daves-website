@@ -7,7 +7,7 @@ export const portfolioData = {
   jobInfo: [
     {
       id: 1,
-      title: "Biography",
+      title: "About me",
       description:
         "Hello, my name is David. I specialize in crafting visually stunning applications and websites.",
     },

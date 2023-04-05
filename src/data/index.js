@@ -173,8 +173,7 @@ export const portfolioData = {
     },
     {
       id: 15,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/4/4f/Laravel_logo.png",
+      image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
       title: "Laravel UI",
       link: "https://laravel.com/docs/10.x/readme",
     },

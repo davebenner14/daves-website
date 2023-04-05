@@ -171,6 +171,25 @@ export const portfolioData = {
       title: "Material UI",
       link: "https://mui.com/",
     },
+    {
+      id: 15,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/4/4f/Laravel_logo.png",
+      title: "Laravel UI",
+      link: "https://laravel.com/docs/10.x/readme",
+    },
+    // {
+    //   id: 16,
+    //   image: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg",
+    //   title: "Material UI",
+    //   link: "https://mui.com/",
+    // },
+    // {
+    //   id: 17,
+    //   image: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg",
+    //   title: "Material UI",
+    //   link: "https://mui.com/",
+    // },
   ],
   experience: [
     {

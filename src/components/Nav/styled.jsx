@@ -6,8 +6,6 @@ export const Nav = styled.nav`
   align-items: center;
   height: 80px;
   padding: 0 24px;
-  background-color: #fff;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -18,6 +16,22 @@ export const Nav = styled.nav`
     padding-bottom: 24px;
     justify-content: center;
   }
+`;
+
+export const BlurredBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); // Adjust the opacity by changing the last value (0.7)
+  z-index: -1;
+  filter: blur(5px);
 `;
 
 export const Logo = styled.img`

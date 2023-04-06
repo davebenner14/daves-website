@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SocialMedia from "../SocialMedia";
-import { Nav, Logo, Name } from "./styled";
+import { Nav, Logo, Name, BlurredBackground } from "./styled";
 
 function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,6 +16,7 @@ function Navbar() {
 
   return (
     <Nav isDarkMode={isDarkMode}>
+      <BlurredBackground />
       <div
         style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
         onClick={handleScrollToTop}

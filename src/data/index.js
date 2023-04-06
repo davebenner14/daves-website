@@ -177,18 +177,27 @@ export const portfolioData = {
       title: "Laravel UI",
       link: "https://laravel.com/docs/10.x/readme",
     },
-    // {
-    //   id: 16,
-    //   image: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg",
-    //   title: "Material UI",
-    //   link: "https://mui.com/",
-    // },
-    // {
-    //   id: 17,
-    //   image: "https://cdn.worldvectorlogo.com/logos/material-ui-1.svg",
-    //   title: "Material UI",
-    //   link: "https://mui.com/",
-    // },
+    {
+      id: 16,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg",
+      title: "Vue",
+      link: "https://vuejs.org/guide/introduction.html",
+    },
+    {
+      id: 17,
+      image:
+        "https://laravelnews.s3.amazonaws.com/images/jetstream.png?w=1024&h=512&q=90&auto=format&fit=crop",
+      title: "Jetstream",
+      link: "https://jetstream.laravel.com/3.x/stacks/inertia.html",
+    },
+    {
+      id: 18,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+      title: "Tailwind",
+      link: "https://v2.tailwindcss.com/docs",
+    },
   ],
   experience: [
     {

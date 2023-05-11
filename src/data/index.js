@@ -238,7 +238,7 @@ export const portfolioData = {
       title: "TheDailyDave",
       category: "PHP, Blade, Laravel",
       image:
-        "https://github.com/davebenner14/TheDailyDave/blob/main/Screenshots/Screenshot1.png",
+        "https://github.com/davebenner14/TheDailyDave/blob/main/Screenshots/Screenshot1.png?raw=true",
       link: "https://github.com/davebenner14/TheDailyDave",
     },
     {
@@ -270,7 +270,7 @@ export const portfolioData = {
       title: "projectConnect4",
       category: "JavaScript",
       image:
-        "https://github.com/davebenner14/projectConnect4/blob/main/In_game_photos/screenshot1.png",
+        "https://github.com/davebenner14/projectConnect4/blob/main/In_game_photos/screenshot1.png?raw=true",
       link: "https://github.com/davebenner14/projectConnect4",
     },
   ],

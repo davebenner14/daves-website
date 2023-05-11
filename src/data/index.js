@@ -235,14 +235,22 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "TimeCapsule",
-      category: "React",
+      title: "TheDailyDave",
+      category: "PHP, Blade, Laravel",
       image:
-        "https://camo.githubusercontent.com/db03d5825c281e599effdf3b4ad90e81d734504e1ab5913a374878cfc5376459/68747470733a2f2f692e696d6775722e636f6d2f5047744e4b53772e706e67",
-      link: "https://github.com/davebenner14/TimeCapsule",
+        "https://github.com/davebenner14/TheDailyDave/blob/main/Screenshots/Screenshot1.png",
+      link: "https://github.com/davebenner14/TheDailyDave",
     },
     {
       id: 2,
+      title: "TimeCapsule",
+      category: "React",
+      image:
+        "https://camo.githubusercontent.com/adc006ec8adf7e1bf3b32ace06ece6c9622a5543f5889184198e2b6c07a8f438/68747470733a2f2f692e696d6775722e636f6d2f734b36566936552e706e67",
+      link: "https://github.com/davebenner14/TimeCapsule",
+    },
+    {
+      id: 3,
       title: "GymBuddy",
       category: "Python",
       image:
@@ -250,7 +258,7 @@ export const portfolioData = {
       link: "https://github.com/davebenner14/Gym-Buddy",
     },
     {
-      id: 3,
+      id: 4,
       title: "Rate-My-Kitten",
       category: "JavaScript",
       image:
@@ -258,11 +266,11 @@ export const portfolioData = {
       link: "https://github.com/davebenner14/Rate-My-Kitten",
     },
     {
-      id: 4,
+      id: 5,
       title: "projectConnect4",
       category: "JavaScript",
       image:
-        "https://raw.git.generalassemb.ly/davebenner14/projectConnect4/main/In_game_photos/screenshot1.png?token=AAALNQCH6UZ3ZDKKZEP6HY3EGBPA4",
+        "https://github.com/davebenner14/projectConnect4/blob/main/In_game_photos/screenshot1.png",
       link: "https://github.com/davebenner14/projectConnect4",
     },
   ],

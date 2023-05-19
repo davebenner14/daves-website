@@ -215,7 +215,7 @@ export const portfolioData = {
     {
       id: 21,
       image:
-        "https://brandslogos.com/wp-content/uploads/images/large/oracle-logo-2.png",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/512px-Oracle_logo.svg.png?20210811183004",
       title: "Oracle",
       link: "https://docs.oracle.com/en/",
     },

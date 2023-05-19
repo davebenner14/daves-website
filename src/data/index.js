@@ -198,6 +198,27 @@ export const portfolioData = {
       title: "Tailwind",
       link: "https://v2.tailwindcss.com/docs",
     },
+    {
+      id: 19,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/1024px-Microsoft_Azure_Logo.svg.png",
+      title: "Azure",
+      link: "https://learn.microsoft.com/en-us/azure/?product=popular",
+    },
+    {
+      id: 20,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png",
+      title: "PHP",
+      link: "https://www.php.net/docs.php",
+    },
+    {
+      id: 21,
+      image:
+        "https://brandslogos.com/wp-content/uploads/images/large/oracle-logo-2.png",
+      title: "Oracle",
+      link: "https://docs.oracle.com/en/",
+    },
   ],
   experience: [
     {

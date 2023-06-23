@@ -1,4 +1,4 @@
-# daves-website
+# Dave's Personal Portfolio Website
 
 Welcome to my personal portfolio website featuring a collection of my recent projects. Built with React, JavaScript, and Materialize, this platform highlights my creativity and expertise in web development.
 

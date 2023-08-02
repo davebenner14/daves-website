@@ -315,7 +315,7 @@ export const portfolioData = {
       title: "The Daily Dave",
       category: "Laravel PHP",
       image:
-        "https://github.com/davebenner14/TheDailyDave/blob/main/Screenshots/Screenshot1.png",
+        "https://raw.githubusercontent.com/davebenner14/TheDailyDave/main/Screenshots/Screenshot1.png",
       link: "https://github.com/davebenner14/TheDailyDave",
     },
     {

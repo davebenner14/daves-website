@@ -259,7 +259,7 @@ export const portfolioData = {
       title: "Chapter Chat",
       category: "PHP, Blade, Laravel",
       image:
-        "https://github.com/davebenner14/ChapterChat/blob/master/Screenshots/Screenshot2.png",
+        "https://raw.githubusercontent.com/davebenner14/ChapterChat/master/Screenshots/Screenshot2.png",
       link: "https://github.com/davebenner14/ChapterChat",
     },
     {
@@ -283,7 +283,7 @@ export const portfolioData = {
       title: "Calendar Vue",
       category: "Vue.js",
       image:
-        "https://github.com/davebenner14/CalendarVue/blob/main/Screenshots/Screenshot1.png",
+        "https://raw.githubusercontent.com/davebenner14/CalendarVue/main/Screenshots/Screenshot1.png",
       link: "https://github.com/davebenner14/CalendarVue",
     },
     {
@@ -291,7 +291,7 @@ export const portfolioData = {
       title: "Vue Blackjack 21",
       category: "JavaScript and Vue.js",
       image:
-        "https://github.com/davebenner14/VueBlackjack21/blob/main/Screenshots/Screenshot1.png",
+        "https://raw.githubusercontent.com/davebenner14/VueBlackjack21/main/Screenshots/Screenshot1.png",
       link: "https://github.com/davebenner14/VueBlackjack21",
     },
     {
@@ -299,7 +299,7 @@ export const portfolioData = {
       title: "VueRESTfulCRUDify",
       category: "JavaScript and Vue.js",
       image:
-        "https://github.com/davebenner14/VueRESTfulCRUDify/blob/main/Screenshots/Screenshot1.png",
+        "https://raw.githubusercontent.com/davebenner14/VueRESTfulCRUDify/main/Screenshots/Screenshot1.png",
       link: "https://github.com/davebenner14/VueRESTfulCRUDify",
     },
     {
@@ -307,7 +307,7 @@ export const portfolioData = {
       title: "Task Notifer",
       category: "JavaScript and Vue.js",
       image:
-        "https://github.com/davebenner14/task-notifier/blob/main/Screenshots/Screenshot1.png",
+        "https://raw.githubusercontent.com/davebenner14/task-notifier/main/Screenshots/Screenshot1.png",
       link: "https://github.com/davebenner14/task-notifier",
     },
     {

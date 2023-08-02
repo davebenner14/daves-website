@@ -256,11 +256,11 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "TheDailyDave",
+      title: "Chapter Chat",
       category: "PHP, Blade, Laravel",
       image:
-        "https://github.com/davebenner14/TheDailyDave/blob/main/Screenshots/Screenshot1.png?raw=true",
-      link: "https://github.com/davebenner14/TheDailyDave",
+        "https://github.com/davebenner14/ChapterChat/blob/master/Screenshots/Screenshot2.png",
+      link: "https://github.com/davebenner14/ChapterChat",
     },
     {
       id: 2,
@@ -280,14 +280,46 @@ export const portfolioData = {
     },
     {
       id: 4,
-      title: "Rate-My-Kitten",
-      category: "JavaScript",
+      title: "Calendar Vue",
+      category: "Vue.js",
       image:
-        "https://github.com/davebenner14/Rate-My-Kitten/blob/main/Assets/Screenshot%202023-01-26%20at%209.33.59%20PM.png?raw=true",
-      link: "https://github.com/davebenner14/Rate-My-Kitten",
+        "https://github.com/davebenner14/CalendarVue/blob/main/Screenshots/Screenshot1.png",
+      link: "https://github.com/davebenner14/CalendarVue",
     },
     {
-      id: 5,
+      id: 6,
+      title: "Vue Blackjack 21",
+      category: "JavaScript and Vue.js",
+      image:
+        "https://github.com/davebenner14/VueBlackjack21/blob/main/Screenshots/Screenshot1.png",
+      link: "https://github.com/davebenner14/VueBlackjack21",
+    },
+    {
+      id: 7,
+      title: "VueRESTfulCRUDify",
+      category: "JavaScript and Vue.js",
+      image:
+        "https://github.com/davebenner14/VueRESTfulCRUDify/blob/main/Screenshots/Screenshot1.png",
+      link: "https://github.com/davebenner14/VueRESTfulCRUDify",
+    },
+    {
+      id: 8,
+      title: "Task Notifer",
+      category: "JavaScript and Vue.js",
+      image:
+        "https://github.com/davebenner14/task-notifier/blob/main/Screenshots/Screenshot1.png",
+      link: "https://github.com/davebenner14/task-notifier",
+    },
+    {
+      id: 9,
+      title: "The Daily Dave",
+      category: "Laravel PHP",
+      image:
+        "https://github.com/davebenner14/TheDailyDave/blob/main/Screenshots/Screenshot1.png",
+      link: "https://github.com/davebenner14/TheDailyDave",
+    },
+    {
+      id: 10,
       title: "projectConnect4",
       category: "JavaScript",
       image:

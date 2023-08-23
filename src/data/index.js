@@ -25,6 +25,17 @@ export const portfolioData = {
       color: null, // added property for randomized color value
     },
   ],
+  clients: [
+    {
+      id: 1,
+      logo: "https://static.wixstatic.com/media/85ddde_506be9e9c48a4210901632d4f70bf627~mv2.png/v1/fill/w_127,h_64,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Pathways%20To%20Employment%20logo%20%26%20Slogan%20Transparent.png",
+      name: "Pathways to Employment",
+      url: "https://www.pathwaystoemploymentgb.org/",
+      description:
+        "At Pathways to Employment Corporation, I'm a dedicated web developer specializing in Wix, enhancing our site to empower those with developmental disabilities. Working closely with team members, parents, and volunteers, I've streamlined processes like liability form submission, simplified class registrations, and ventured into mobile app functionality. I'm also focusing on subscription services for caregiver matching. With my expertise in web development, UX optimization, and mobile app development, I play a crucial role in ensuring equal employment opportunities for all, regardless of disabilities.",
+    },
+  ],
+
   jobStats: [
     {
       id: 1,

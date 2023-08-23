@@ -21,6 +21,10 @@ function Home() {
       <Section id="skills" heading="Skills">
         <Skills />
       </Section>
+      <Section id="clients" heading="Clients">
+        <Clients />
+      </Section>
+
       <Section id="experience" heading="Education & Experience">
         <Experience />
       </Section>

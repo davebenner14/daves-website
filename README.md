@@ -1,23 +1,12 @@
-# Dave's Personal Portfolio Website
+# React + Vite
 
-Welcome to my personal portfolio website featuring a collection of my recent projects. Built with React, JavaScript, and Materialize, this platform highlights my creativity and expertise in web development.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Explore my portfolio to discover a diverse range of projects that push the boundaries of what's possible. Using React, I've crafted dynamic and interactive experiences that engage users and provide seamless navigation.
+Currently, two official plugins are available:
 
-With the combination of JavaScript and Materialize, a responsive front-end framework, I've created visually appealing designs with an intuitive user interface. Each project showcases my versatility and adaptability, from web applications to mobile-responsive websites.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-I invite you to explore my portfolio and witness the culmination of my passion for web development. Feel free to get in touch with me for collaborations or inquiries. Let's embark on a journey of innovation and creativity together.
+## Expanding the ESLint configuration
 
-
-## Live Website 🌐
-
-### [David Benner](https://www.davebenner.ca/)
-
-## Technologies Used 💻
--   [React](https://reactjs.org/docs/)
--   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
--   [Materialize](https://materializecss.com/)
-
-## Going Forward 🚀
-
-I value your feedback and welcome any suggestions to enhance my personal portfolio website. I am excited to continue my journey in web development, constantly learning and evolving, as I pursue a fulfilling career in this dynamic field. Your support and engagement mean the world to me as I strive to create impactful and innovative solutions.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

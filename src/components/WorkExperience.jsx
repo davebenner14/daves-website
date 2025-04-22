@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 export default function WorkExperience() {
+  // ─── Your slides data ──────────────────────────────────────────────────
   const slides = [
     {
       id: 1,
@@ -31,40 +32,45 @@ export default function WorkExperience() {
     }
   ];
 
-  // Clone first and last slide for infinite-loop effect
+  // ─── Carousel infra ───────────────────────────────────────────────────
   const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
 
   const [current, setCurrent] = useState(1);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [hoveredId, setHoveredId] = useState(null);
 
-  const sliderRef = useRef(null);
-  const intervalRef = useRef(null);
-
-  // Start autoplay on mount
+  // ─── Mobile detection ─────────────────────────────────────────────────
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    startSlide();
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  // ─── Autoplay & navigation ────────────────────────────────────────────
+  const intervalRef = useRef(null);
+  useEffect(() => {
+    startAuto();
     return () => clearInterval(intervalRef.current);
   }, []);
 
-  const startSlide = () => {
+  const startAuto = () => {
     clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(handleNext, 3000);
+    intervalRef.current = setInterval(() => setCurrent((c) => c + 1), 3000);
   };
-  const pauseSlide = () => clearInterval(intervalRef.current);
-  const resumeSlide = () => startSlide();
-
+  const pauseAuto = () => clearInterval(intervalRef.current);
+  const resumeAuto = () => startAuto();
   const handlePrev = () => {
-    pauseSlide();
+    pauseAuto();
     setCurrent((c) => c - 1);
   };
   const handleNext = () => {
-    pauseSlide();
+    pauseAuto();
     setCurrent((c) => c + 1);
   };
 
   const handleTransitionEnd = () => {
-    // Jump to real slide without animation at boundaries
     if (current < 1) {
       setTransitionEnabled(false);
       setCurrent(slides.length);
@@ -73,47 +79,42 @@ export default function WorkExperience() {
       setCurrent(1);
     }
   };
-
-  // Re-enable transition after reposition
   useEffect(() => {
     if (!transitionEnabled) {
-      const timer = setTimeout(() => setTransitionEnabled(true), 50);
-      return () => clearTimeout(timer);
+      const t = setTimeout(() => setTransitionEnabled(true), 50);
+      return () => clearTimeout(t);
     }
   }, [transitionEnabled]);
 
-  // Calculate real slide index for dot indicators
-  const realIndex = (current - 1 + slides.length) % slides.length;
+  // ─── Which slide’s details to show ────────────────────────────────────
+  const activeSlide = slides[(current - 1 + slides.length) % slides.length];
+  const detailsSlide = isMobile
+    ? activeSlide
+    : slides.find((s) => s.id === hoveredId);
 
-  // Get hovered slide data (persistent until next hover)
-  const hoveredSlide = slides.find((s) => s.id === hoveredId);
-
+  // ─── Render ──────────────────────────────────────────────────────────
   return (
     <section className="w-full bg-white pt-24 pb-32">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="font-sans font-semibold text-3xl md:text-5xl text-center text-gray-900 mb-4">
-          Triangle Dynamics is a freelance web developing company I started to
-          create professional‑looking websites
+        <h2 className="text-3xl md:text-5xl font-semibold text-center text-gray-900 mb-4">
+          Triangle Dynamics is a freelance web developing company I started...
         </h2>
-        <p className="font-sans text-lg md:text-xl text-center text-gray-600 mb-12">
+        <p className="text-lg md:text-xl text-center text-gray-600 mb-12">
           Here are a few of my clients
         </p>
       </div>
 
-      {/* Carousel Container */}
+      {/* Carousel */}
       <div
         className="relative w-full overflow-hidden"
-        style={{ marginBottom: "66px" }}
-        onMouseEnter={pauseSlide}
-        onMouseLeave={resumeSlide}
+        onMouseEnter={pauseAuto}
+        onMouseLeave={resumeAuto}
         onClick={(e) => {
           const { left, width } = e.currentTarget.getBoundingClientRect();
-          const x = e.clientX - left;
-          x < width / 2 ? handlePrev() : handleNext();
+          e.clientX - left < width / 2 ? handlePrev() : handleNext();
         }}
       >
         <div
-          ref={sliderRef}
           onTransitionEnd={handleTransitionEnd}
           className={`flex ${
             transitionEnabled
@@ -123,65 +124,67 @@ export default function WorkExperience() {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {extendedSlides.map((slide, idx) => {
+            if (!slide) return null;
             const isActive = idx === current;
             return (
               <div
                 key={idx}
                 onMouseEnter={() => setHoveredId(slide.id)}
-                className="relative flex-shrink-0 w-[80%] mx-[10%] h-[600px] md:h-[900px] cursor-pointer"
+                className="
+                  relative flex-shrink-0
+                  w-[80%] mx-[10%]
+                  h-auto md:h-[900px]
+                  cursor-pointer
+                "
               >
                 <a href={slide.link} target="_blank" rel="noopener noreferrer">
-                  <div
-                    className={`w-full h-full rounded-lg bg-center bg-cover transition-opacity duration-500 ${
-                      isActive
-                        ? "opacity-100 filter-none"
-                        : "opacity-50 filter grayscale"
-                    }`}
-                    style={{ backgroundImage: `url('${slide.src}')` }}
+                  <img
+                    src={slide.src}
+                    alt={slide.desc}
+                    className={`
+                      w-full h-auto md:h-[900px]
+                      object-cover rounded-lg
+                      transition-opacity duration-500
+                      ${
+                        isActive
+                          ? "opacity-100 filter-none"
+                          : "opacity-50 filter grayscale"
+                      }
+                    `}
                   />
                 </a>
-
-                {/* Overlay with description and button */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 z-20">
-                  <p className="font-sans text-sm text-gray-800 mb-2">
-                    {slide.desc}
-                  </p>
-                  <a
-                    href={slide.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-black text-white px-6 py-3 rounded-full uppercase text-sm font-medium hover:bg-gray-800 transition-colors"
-                  >
-                    Visit Site
-                  </a>
-                </div>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Hover Popup (persistent until next hover) */}
-      {hoveredSlide && (
-        <div className="max-w-4xl mx-auto px-4 mb-6 bg-transparent p-6">
-          <div className="font-sans font-bold text-4xl md:text-5xl text-center text-gray-900 mb-4">
-            {hoveredSlide.title}
-          </div>
-          <p className="font-sans text-base md:text-lg leading-relaxed text-center text-gray-700 max-w-2xl mx-auto">
-            {hoveredSlide.details}
+      {/* Details */}
+      {detailsSlide && (
+        <div className="max-w-4xl mx-auto px-4 mb-6 p-6">
+          <h3 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4">
+            {detailsSlide.title}
+          </h3>
+          <p className="text-base md:text-lg leading-relaxed text-center text-gray-700 max-w-2xl mx-auto">
+            {detailsSlide.details}
           </p>
         </div>
       )}
 
-      {/* Dot Indicators */}
+      {/* Dots */}
       <div className="flex justify-center space-x-4 mt-4 mb-24">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx + 1)}
-            className={`w-3 h-3 rounded-full bg-gray-400 focus:outline-none ${
-              realIndex === idx ? "bg-gray-800" : "opacity-50"
-            }`}
+            className={`
+              w-3 h-3 rounded-full focus:outline-none
+              ${
+                (current - 1 + slides.length) % slides.length === idx
+                  ? "bg-gray-800"
+                  : "bg-gray-400 opacity-50"
+              }
+            `}
           />
         ))}
       </div>

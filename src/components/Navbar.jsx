@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Logo is in public/Assets, so reference by absolute path
 const logoUrl = "/Assets/TDnobackground.png";
 
 export default function Navbar() {
@@ -17,14 +16,12 @@ export default function Navbar() {
     { label: "Contact", href: "#contact" }
   ];
 
-  // focus input when opened
   useEffect(() => {
     if (searchOpen && inputRef.current) {
       inputRef.current.focus();
     }
   }, [searchOpen]);
 
-  // close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
       if (searchOpen && navRef.current && !navRef.current.contains(e.target)) {
@@ -35,7 +32,15 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [searchOpen]);
 
-  // on Enter, highlight occurrences or alert
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       const found = window.find ? window.find(searchQuery) : false;
@@ -56,11 +61,9 @@ export default function Navbar() {
         right: 0,
         backgroundColor: "rgba(31, 31, 31, 0.8)",
         backdropFilter: "blur(8px)",
-        zIndex: 50,
-        overflow: "visible"
+        zIndex: 50
       }}
     >
-      {/* Top bar: logo, links, search button */}
       <div
         style={{
           maxWidth: "800px",
@@ -71,54 +74,39 @@ export default function Navbar() {
           height: "44px"
         }}
       >
-        <a
-          href="/"
-          style={{ display: "flex", alignItems: "center", height: "100%" }}
-        >
-          <img
-            src={logoUrl}
-            alt="Logo"
-            style={{ height: "32px", width: "auto" }}
-          />
+        <a href="/">
+          <img src={logoUrl} alt="Logo" style={{ height: "32px" }} />
         </a>
 
         {navItems.map((item) => (
           <a
             key={item.label}
             href={item.href}
+            onClick={(e) => handleNavClick(e, item.href)}
             style={{
-              color: "#ffffff",
-              fontFamily:
-                "SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
+              color: "#fff",
               fontSize: "12px",
               fontWeight: 500,
               textDecoration: "none",
               transition: "color 0.2s"
             }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "#A855F7")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#ffffff")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#fff")}
           >
             {item.label}
           </a>
         ))}
 
         <button
-          id="globalnav-menubutton-link-search"
-          role="button"
-          aria-label="Search Davebenner.ca"
+          aria-label="Search"
           aria-expanded={searchOpen}
-          style={{
-            background: "none",
-            border: "none",
-            padding: 0,
-            cursor: "pointer"
-          }}
-          onClick={() => setSearchOpen((open) => !open)}
+          style={{ background: "none", border: "none", cursor: "pointer" }}
+          onClick={() => setSearchOpen((o) => !o)}
           onMouseEnter={(e) =>
             (e.currentTarget.firstChild.style.stroke = "#A855F7")
           }
           onMouseLeave={(e) =>
-            (e.currentTarget.firstChild.style.stroke = "#ffffff")
+            (e.currentTarget.firstChild.style.stroke = "#fff")
           }
         >
           <svg
@@ -126,7 +114,7 @@ export default function Navbar() {
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#ffffff"
+            stroke="#fff"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -137,7 +125,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Animated search dropdown */}
       <AnimatePresence initial={false}>
         {searchOpen && (
           <motion.div
@@ -153,8 +140,7 @@ export default function Navbar() {
               left: 0,
               right: 0,
               backgroundColor: "rgba(31, 31, 31, 0.8)",
-              backdropFilter: "blur(8px)",
-              zIndex: 49
+              backdropFilter: "blur(8px)"
             }}
           >
             <div
@@ -165,7 +151,6 @@ export default function Navbar() {
                 alignItems: "center"
               }}
             >
-              {/* Search input row */}
               <div
                 style={{
                   display: "flex",
@@ -179,7 +164,7 @@ export default function Navbar() {
                   height="20"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#ffffff"
+                  stroke="#fff"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -200,23 +185,17 @@ export default function Navbar() {
                     background: "transparent",
                     border: "none",
                     outline: "none",
-                    color: "#ffffff",
-                    fontFamily:
-                      "SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif",
+                    color: "#fff",
                     fontSize: "14px"
                   }}
                 />
               </div>
-
-              {/* Quick Links */}
               <div
                 style={{
                   marginTop: "16px",
                   width: "90%",
                   maxWidth: "600px",
-                  color: "#ffffff",
-                  fontFamily:
-                    "SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif"
+                  color: "#fff"
                 }}
               >
                 <div style={{ fontSize: "14px", fontWeight: 600 }}>
@@ -225,24 +204,22 @@ export default function Navbar() {
                 <ul
                   style={{ listStyle: "none", padding: 0, margin: "8px 0 0" }}
                 >
-                  {["Quick Link 1", "Quick Link 2", "Quick Link 3"].map(
-                    (link) => (
-                      <li
-                        key={link}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          marginTop: "8px",
-                          cursor: "pointer",
-                          fontSize: "13px",
-                          fontWeight: 500
-                        }}
-                      >
-                        <span style={{ marginRight: "8px" }}>→</span>
-                        {link}
-                      </li>
-                    )
-                  )}
+                  {["Quick Link 1", "Quick Link 2", "Quick Link 3"].map((l) => (
+                    <li
+                      key={l}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginTop: "8px",
+                        cursor: "pointer",
+                        fontSize: "13px",
+                        fontWeight: 500
+                      }}
+                    >
+                      <span style={{ marginRight: "8px" }}>→</span>
+                      {l}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

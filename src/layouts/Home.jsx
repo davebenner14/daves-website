@@ -11,10 +11,22 @@ export default function Home() {
     <div className="bg-black text-white overflow-x-hidden overflow-y-auto snap-y snap-mandatory scroll-smooth">
       <Navbar />
       <IntroSection />
-      <WorkExperience />
-      <AboutMe />
-      <Games />
-      <Contact />
+
+      <section id="work-experience" className="snap-start">
+        <WorkExperience />
+      </section>
+
+      <section id="about" className="snap-start">
+        <AboutMe />
+      </section>
+
+      <section id="games" className="snap-start">
+        <Games />
+      </section>
+
+      <section id="contact" className="snap-start">
+        <Contact />
+      </section>
     </div>
   );
 }

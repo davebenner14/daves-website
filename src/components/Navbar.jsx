@@ -13,7 +13,8 @@ export default function Navbar() {
     { label: "About", href: "#about" },
     { label: "Work Experience", href: "#work-experience" },
     { label: "Games", href: "#games" },
-    { label: "Contact", href: "#contact" }
+    { label: "Contact", href: "#contact" },
+    { label: "Templates", href: "/templates", isPage: true } // ✅ NEW page link
   ];
 
   useEffect(() => {
@@ -82,7 +83,9 @@ export default function Navbar() {
           <a
             key={item.label}
             href={item.href}
-            onClick={(e) => handleNavClick(e, item.href)}
+            onClick={(e) => {
+              if (!item.isPage) handleNavClick(e, item.href);
+            }}
             style={{
               color: "#fff",
               fontSize: "12px",

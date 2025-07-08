@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const logoUrl = "/Assets/TDnobackground.png";
 
-export default function Navbar() {
+export default function Navbar({ onNavigate }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const inputRef = useRef(null);
   const navRef = useRef(null);
 
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Work Experience", href: "#work-experience" },
-    { label: "Games", href: "#games" },
-    { label: "Contact", href: "#contact" },
-    { label: "Templates", href: "/templates", isPage: true } // ✅ NEW page link
+    { label: "About", href: "#about", page: "home" },
+    { label: "Work Experience", href: "#work-experience", page: "home" },
+    { label: "Games", href: "#games", page: "home" },
+    { label: "Contact", href: "#contact", page: "home" },
+    { label: "Templates", href: "#", page: "templates" } // No longer a route
   ];
 
   useEffect(() => {
@@ -33,12 +33,16 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [searchOpen]);
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e, href, page) => {
     e.preventDefault();
-    const id = href.replace("#", "");
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    onNavigate(page);
+
+    if (page === "home") {
+      const id = href.replace("#", "");
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
@@ -75,7 +79,7 @@ export default function Navbar() {
           height: "44px"
         }}
       >
-        <a href="/">
+        <a href="#" onClick={(e) => handleNavClick(e, "#about", "home")}>
           <img src={logoUrl} alt="Logo" style={{ height: "32px" }} />
         </a>
 
@@ -83,9 +87,7 @@ export default function Navbar() {
           <a
             key={item.label}
             href={item.href}
-            onClick={(e) => {
-              if (!item.isPage) handleNavClick(e, item.href);
-            }}
+            onClick={(e) => handleNavClick(e, item.href, item.page)}
             style={{
               color: "#fff",
               fontSize: "12px",

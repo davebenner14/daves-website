@@ -1,17 +1,18 @@
 // src/App.jsx
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import Home from "./layouts/Home";
 import Templates from "./layouts/Templates";
+import Navbar from "./components/Navbar";
 
 function App() {
+  const [activePage, setActivePage] = useState("home");
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/templates" element={<Templates />} />
-      </Routes>
-    </Router>
+    <>
+      <Navbar onNavigate={setActivePage} />
+      {activePage === "home" && <Home />}
+      {activePage === "templates" && <Templates />}
+    </>
   );
 }
 

@@ -43,9 +43,9 @@ export default function IntroSection() {
           className="w-full h-auto object-contain"
         />
 
-        {/* Overlay wrapper nudged down just a bit */}
+        {/* Overlay content centered and offset down to avoid navbar */}
         <div
-          className="absolute inset-x-0 top-[-30%] flex flex-col items-center pointer-events-none"
+          className="absolute inset-0 flex flex-col items-center justify-center mt-[80px] pointer-events-none"
           style={{
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"

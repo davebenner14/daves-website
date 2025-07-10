@@ -1,14 +1,17 @@
 import React from "react";
-import canadaMap from "../assets/canada-political-map.avif";
-import canadaMapBlur from "../assets/canadamap2.jpg";
-import regionMap from "../assets/canadamap.jpg";
+import genPol2 from "../assets/GenPol2.png";
+import picnicImg from "../assets/picnic.png";
 
 export default function MinimalModern() {
   return (
     <>
       {/* Description */}
       <h2
-        style={{ fontSize: "1.75rem", marginBottom: "0.75rem", color: "#fff" }}
+        style={{
+          fontSize: "1.75rem",
+          marginBottom: "0.75rem",
+          color: "#fff"
+        }}
       >
         Minimal Modern Template
       </h2>
@@ -25,246 +28,343 @@ export default function MinimalModern() {
         candidates who want a modern look with serious performance.
       </p>
 
-      {/* === Preview Site Wrapper === */}
-      <div
+      {/* ⬛ NAVBAR */}
+      <nav
         style={{
-          borderRadius: "12px",
-          overflow: "hidden",
-          border: "1px solid #333"
+          backgroundColor: "#fff",
+          padding: "1.5rem 2rem",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
+          fontSize: "1rem",
+          fontWeight: "500"
         }}
       >
-        {/* ⬛ NAVBAR */}
-        <section
-          style={{
-            background: "#111",
-            borderBottom: "1px solid #333",
-            padding: "1rem 2rem",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
-          }}
-        >
-          <div
-            style={{
-              fontWeight: "bold",
-              fontSize: "1.25rem",
-              color: "#fff"
-            }}
-          >
-            ModernCampaign.ca
-          </div>
-          <nav style={{ display: "flex", gap: "1.25rem", fontSize: "0.9rem" }}>
-            <a href="#" style={navLink}>
-              About
-            </a>
-            <a href="#" style={navLink}>
-              Platform
-            </a>
-            <a href="#" style={navLink}>
-              Riding
-            </a>
-            <a href="#" style={navLink}>
-              News
-            </a>
-            <a href="#" style={navLink}>
-              Contact
-            </a>
-          </nav>
-        </section>
+        <div style={{ fontSize: "1.25rem", color: "#111" }}>John Doe</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+          <a href="#" style={{ color: "#111", textDecoration: "none" }}>
+            Meet John
+          </a>
+          <a href="#" style={{ color: "#111", textDecoration: "none" }}>
+            Volunteer
+          </a>
+          <a href="#" style={{ color: "#111", textDecoration: "none" }}>
+            Lawn Sign
+          </a>
+          <button className="mm-btn donate-now">Donate Now</button>
+        </div>
+      </nav>
 
-        {/* ⬛ HERO */}
-        <section
+      {/* ⬛ HERO */}
+      <section
+        style={{
+          position: "relative",
+          height: "100vh",
+          overflow: "hidden"
+        }}
+      >
+        <img
+          src={genPol2}
+          alt="Hero"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+        <div
           style={{
-            backgroundColor: "#1a1a1a",
-            padding: "4rem 2rem",
-            textAlign: "center",
-            color: "#fff"
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "2.25rem",
-              fontWeight: "600",
-              marginBottom: "1rem"
-            }}
-          >
-            Modern Leadership for a New Generation
-          </h1>
-          <p
-            style={{
-              fontSize: "1.1rem",
-              maxWidth: "700px",
-              margin: "0 auto 2rem"
-            }}
-          >
-            Focused, responsive, and ready to serve. This design is built for
-            speed and clarity on all devices.
-          </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              gap: "1rem",
-              flexWrap: "wrap"
-            }}
-          >
-            <button style={buttonStyle}>Donate</button>
-            <button style={buttonStyle}>Volunteer</button>
-          </div>
-        </section>
-
-        {/* ⬛ CANDIDATE */}
-        <section
-          style={{
-            padding: "3rem 2rem",
-            background: "#fff",
-            color: "#111",
-            textAlign: "center"
-          }}
-        >
-          <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-            Meet the Candidate
-          </h2>
-          <p style={{ maxWidth: "680px", margin: "0 auto", lineHeight: "1.6" }}>
-            A strong voice in Parliament, committed to accountability and
-            community results. Let's build a stronger future — together.
-          </p>
-        </section>
-
-        {/* ⬛ RIDING OVERVIEW */}
-        <section
-          style={{
-            padding: "4rem 2rem",
-            textAlign: "center",
+            position: "absolute",
+            bottom: "6rem",
+            left: "2rem",
             color: "#fff",
-            backgroundImage: `url(${canadaMapBlur})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed"
+            fontSize: "2rem",
+            fontWeight: "bold",
+            textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+            zIndex: 2
           }}
         >
-          <div
-            style={{
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              padding: "2rem",
-              borderRadius: "8px",
-              maxWidth: "900px",
-              margin: "0 auto"
-            }}
-          >
-            <h2 style={{ fontSize: "1.5rem", marginBottom: "1.5rem" }}>
-              Your Riding. Your Future.
-            </h2>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                gap: "2rem",
-                marginBottom: "2rem"
-              }}
-            >
-              <div>
-                <h3>Local Priorities</h3>
-                <p>Affordable housing, infrastructure, and public safety.</p>
-              </div>
-              <div>
-                <h3>Constituent Services</h3>
-                <p>Direct access to your MP's office — in person or online.</p>
-              </div>
-              <div>
-                <h3>Boundary Info</h3>
-                <p>Serving diverse communities across our region.</p>
-              </div>
-            </div>
-            <img
-              src={regionMap}
-              alt="Map"
-              style={{
-                maxWidth: "280px",
-                width: "100%",
-                margin: "0 auto",
-                display: "block",
-                borderRadius: "8px",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.3)"
-              }}
-            />
-          </div>
-        </section>
-
-        {/* ⬛ NEWS */}
-        <section
-          style={{ padding: "3rem 2rem", background: "#f8f8f8", color: "#111" }}
+          John Doe
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            bottom: "2rem",
+            left: 0,
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            zIndex: 2
+          }}
         >
-          <h2
-            style={{
-              textAlign: "center",
-              fontSize: "1.5rem",
-              marginBottom: "2rem"
-            }}
-          >
-            Updates & Initiatives
-          </h2>
+          <button className="mm-btn volunteer">Volunteer</button>
+          <button className="mm-btn lawn-sign">Lawn Sign</button>
+          <button className="mm-btn donate">Donate</button>
+        </div>
+      </section>
+
+      {/* 👥 SUPPORT FORM SECTION */}
+      <section
+        style={{
+          padding: "4rem 2rem",
+          backgroundColor: "#f5f5f5",
+          color: "#111"
+        }}
+      >
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "1.75rem",
+            marginBottom: "1.5rem"
+          }}
+        >
+          Can I count on your support?
+        </h2>
+        <form style={{ maxWidth: "600px", margin: "0 auto" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "2rem"
+              gridTemplateColumns: "1fr 1fr",
+              columnGap: "1rem",
+              rowGap: "1.5rem",
+              marginBottom: "2rem"
             }}
           >
-            <div style={newsCard}>
-              <h4>Expanding Local Broadband</h4>
-              <p>New investments to close the digital divide in rural areas.</p>
+            <div>
+              <label style={{ display: "block", marginBottom: "0.5rem" }}>
+                First Name *
+              </label>
+              <input
+                type="text"
+                placeholder="E.g. John"
+                style={{
+                  width: "100%",
+                  padding: "0.75rem",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
+                  minHeight: "3rem"
+                }}
+              />
             </div>
-            <div style={newsCard}>
-              <h4>Small Business Roundtables</h4>
-              <p>Monthly town halls focused on local economic growth.</p>
+            <div>
+              <label style={{ display: "block", marginBottom: "0.5rem" }}>
+                Last Name *
+              </label>
+              <input
+                type="text"
+                placeholder="E.g. John"
+                style={{
+                  width: "100%",
+                  padding: "0.75rem",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
+                  minHeight: "3rem"
+                }}
+              />
             </div>
-            <div style={newsCard}>
-              <h4>New Volunteer Portal</h4>
-              <p>Streamlined sign-ups and event tracking on all devices.</p>
+            <div>
+              <label style={{ display: "block", marginBottom: "0.5rem" }}>
+                Postal Code
+              </label>
+              <input
+                type="text"
+                placeholder="K0E 1G0"
+                style={{
+                  width: "100%",
+                  padding: "0.75rem",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
+                  minHeight: "3rem"
+                }}
+              />
+            </div>
+            <div>
+              <label style={{ display: "block", marginBottom: "0.5rem" }}>
+                Email Address *
+              </label>
+              <input
+                type="email"
+                placeholder="E.g. john@doe.com"
+                style={{
+                  width: "100%",
+                  padding: "0.75rem",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
+                  minHeight: "3rem"
+                }}
+              />
             </div>
           </div>
-        </section>
+          <button
+            style={{
+              backgroundColor: "#cc0000",
+              color: "#fff",
+              padding: "0.75rem 1.5rem",
+              border: "none",
+              borderRadius: "4px",
+              fontSize: "1rem",
+              cursor: "pointer",
+              display: "block",
+              width: "100%"
+            }}
+          >
+            I'm In!
+          </button>
+        </form>
+      </section>
 
-        {/* ⬛ FOOTER */}
-        <footer
+      {/* 👤 ABOUT SECTION */}
+      <section
+        style={{
+          padding: "4rem 2rem",
+          backgroundColor: "#fff",
+          color: "#111"
+        }}
+      >
+        <div
           style={{
-            background: "#111",
-            color: "#888",
-            padding: "1rem",
-            textAlign: "center"
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "2rem",
+            alignItems: "center",
+            maxWidth: "1000px",
+            margin: "0 auto"
           }}
         >
-          © 2025 ModernCampaign.ca — All rights reserved
-        </footer>
-      </div>
+          <div>
+            <h2 style={{ fontSize: "1.75rem", marginBottom: "1rem" }}>
+              About John Doe
+            </h2>
+            <p style={{ lineHeight: "1.6", marginBottom: "1rem" }}>
+              John Doe is a dedicated elected representative in his first term,
+              committed to community, transparency, and progress.
+            </p>
+            <p style={{ lineHeight: "1.6", marginBottom: "1rem" }}>
+              In this critical role, he advocates for accountability, local
+              economic development, and social unity.
+            </p>
+            <p style={{ lineHeight: "1.6", marginBottom: "1.5rem" }}>
+              His commitment is demonstrated through active community events and
+              ongoing constituent outreach.
+            </p>
+            <button className="read-more-btn">Read More</button>
+          </div>
+          <div>
+            <img
+              src={picnicImg}
+              alt="Picnic"
+              style={{ width: "100%", borderRadius: "8px" }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 🔗 SOCIAL SECTION */}
+      <section
+        style={{
+          padding: "2rem 0",
+          textAlign: "center",
+          backgroundColor: "#fff",
+          color: "#003366"
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "1.5rem",
+            marginBottom: "1rem",
+            color: "#003366"
+          }}
+        >
+          Stay Connected
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.5rem",
+            fontSize: "1.5rem"
+          }}
+        >
+          <a href="#" style={{ color: "#003366", textDecoration: "none" }}>
+            📘
+          </a>
+          <a href="#" style={{ color: "#003366", textDecoration: "none" }}>
+            🐦
+          </a>
+          <a href="#" style={{ color: "#003366", textDecoration: "none" }}>
+            📸
+          </a>
+          <a href="#" style={{ color: "#003366", textDecoration: "none" }}>
+            ▶️
+          </a>
+        </div>
+      </section>
+
+      {/* ⚪ FOOTER */}
+      <footer
+        style={{
+          backgroundColor: "#003366",
+          color: "#fff",
+          textAlign: "center",
+          padding: "2rem 0"
+        }}
+      >
+        <div style={{ fontSize: "1.25rem" }}>John Doe</div>
+        <div style={{ fontSize: "0.75rem", marginTop: "0.5rem" }}>
+          Authorized by the official agent for John Doe
+        </div>
+      </footer>
+
+      {/* Inline CSS for buttons */}
+      <style>
+        {`
+          .mm-btn {
+            flex: 1;
+            padding: 1rem 0;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0;
+          }
+          .mm-btn + .mm-btn {
+            margin-left: -1px;
+          }
+          .mm-btn:hover {
+            background-color: #888 !important;
+          }
+          .volunteer {
+            background-color: #003366;
+            color: #fff;
+          }
+          .lawn-sign {
+            background-color: #4da6ff;
+            color: #fff;
+          }
+          .donate {
+            background-color: #cc0000;
+            color: #fff;
+          }
+          .donate-now {
+            background-color: #cc0000;
+            color: #fff;
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+          }
+          .donate-now:hover {
+            background-color: #888 !important;
+          }
+          .read-more-btn {
+            background-color: #cc0000;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+          .read-more-btn:hover {
+            background-color: #888 !important;
+          }
+        `}
+      </style>
     </>
   );
 }
-
-// 🔧 STYLES
-const navLink = {
-  color: "#eee",
-  textDecoration: "none",
-  fontWeight: "500",
-  transition: "color 0.2s"
-};
-
-const buttonStyle = {
-  backgroundColor: "#000",
-  border: "1px solid #fff",
-  padding: "0.75rem 1.5rem",
-  borderRadius: "6px",
-  color: "#fff",
-  fontWeight: "bold",
-  cursor: "pointer",
-  fontSize: "1rem",
-  transition: "background-color 0.3s"
-};
-
-const newsCard = {
-  background: "#fff",
-  padding: "1rem",
-  borderRadius: "8px",
-  boxShadow: "0 2px 6px rgba(0,0,0,0.05)"
-};

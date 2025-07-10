@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import headshot from "../assets/GenPol1.png";
-import canadaMapBlur from "../assets/canadamap2.jpg";
-import regionMap from "../assets/canadamap.jpg";
+import parallaxBg from "../assets/Ottawa.webp";
+import ottawaMap from "../assets/OttawaMap.jpg";
+import meetBg from "../assets/Paralax1.webp";
+import togPolImg from "../assets/TogPol1.png";
 
 export default function PersonalBrand() {
+  const [scrolled, setScrolled] = useState(false);
+  const [language, setLanguage] = useState("EN");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 250);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "EN" ? "FR" : "EN"));
+  };
+
   return (
-    <>
-      {/* Description */}
+    <div style={{ position: "relative", zIndex: 0 }}>
+      {/* === Description === */}
       <h2
-        style={{ fontSize: "1.75rem", marginBottom: "0.75rem", color: "#fff" }}
+        style={{
+          fontSize: "1.75rem",
+          marginBottom: "0.75rem",
+          color: "#fff"
+        }}
       >
         Personal Brand Template
       </h2>
@@ -20,259 +41,343 @@ export default function PersonalBrand() {
           marginBottom: "2rem"
         }}
       >
-        Based on chakau.ca, this layout is centered around the candidate as a
-        person: their journey, their story, and their vision. Optimized for
-        mobile, supports bilingual messaging, and includes areas for media,
-        testimonials, and direct contact.
+        Focus on the candidate, bio-driven, great for outreach.
       </p>
 
-      {/* === Preview Site Wrapper === */}
-      <div
+      {/* 👤 HERO / PARALLAX SECTION + NAVBAR */}
+      <section
         style={{
-          borderRadius: "12px",
-          overflow: "hidden",
-          border: "1px solid #333"
+          position: "relative",
+          backgroundImage: `url(${parallaxBg})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "70%",
+          backgroundPosition: "center",
+          paddingTop: "6rem",
+          paddingBottom: "6rem",
+          color: "#fff"
         }}
       >
-        {/* 👤 NAVBAR */}
-        <section
+        <div
           style={{
-            background: "#0d0d0d",
-            borderBottom: "1px solid #444",
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            backgroundColor: "rgba(30, 90, 150, 0.25)",
+            zIndex: 1
+          }}
+        />
+        <div
+          style={{
+            backgroundColor: scrolled
+              ? "rgba(30, 90, 150, 0.92)"
+              : "transparent",
             padding: "1rem 2rem",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center"
+            alignItems: "center",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 10,
+            transition: "background-color 0.4s ease"
           }}
         >
           <div
+            style={{ fontWeight: "bold", fontSize: "1.2rem", color: "#fff" }}
+          >
+            Jane Candidate
+          </div>
+          <div
+            onClick={toggleLanguage}
             style={{
-              fontWeight: "bold",
-              fontSize: "1.25rem",
-              color: "#fff"
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              fontSize: "0.95rem",
+              color: "#fff",
+              cursor: "pointer",
+              userSelect: "none"
             }}
           >
-            MeetYourCandidate.ca
+            🇨🇦 <span>{language} ↓</span>
           </div>
-          <nav style={{ display: "flex", gap: "1.25rem", fontSize: "0.9rem" }}>
-            <a href="#" style={navLink}>
-              Bio
-            </a>
-            <a href="#" style={navLink}>
-              Platform
-            </a>
-            <a href="#" style={navLink}>
-              Media
-            </a>
-            <a href="#" style={navLink}>
-              Endorsements
-            </a>
-            <a href="#" style={navLink}>
-              Contact
-            </a>
-          </nav>
-        </section>
+        </div>
 
-        {/* 👤 HERO/BIO SECTION */}
-        <section
+        <div
           style={{
-            backgroundColor: "#121212",
-            padding: "4rem 2rem",
-            textAlign: "center",
-            color: "#fff"
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "2rem",
+            marginTop: "4rem",
+            padding: "0 2rem",
+            position: "relative",
+            zIndex: 2
           }}
         >
-          <img
-            src={headshot}
-            alt="Candidate"
-            style={{
-              width: "140px",
-              height: "140px",
-              borderRadius: "50%",
-              objectFit: "cover",
-              marginBottom: "1rem",
-              border: "3px solid #fff"
-            }}
-          />
-          <h1
-            style={{
-              fontSize: "2rem",
-              fontWeight: "600",
-              marginBottom: "0.5rem"
-            }}
-          >
-            Alex Smith
-          </h1>
-          <p
-            style={{ maxWidth: "700px", margin: "0 auto", fontSize: "1.1rem" }}
-          >
-            Community leader, educator, and advocate for families — working to
-            bring honest, energetic representation to our region.
-          </p>
-        </section>
+          <div style={{ flex: "1 1 300px", maxWidth: "600px" }}>
+            <h1
+              style={{
+                fontSize: "2.5rem",
+                fontWeight: "bold",
+                marginBottom: "1rem"
+              }}
+            >
+              Meet Jane Candidate
+            </h1>
+            <h2
+              style={{
+                fontSize: "1.25rem",
+                marginBottom: "0.5rem",
+                color: "#f1f1f1"
+              }}
+            >
+              Votre candidate conservatrice du bon sens — Ottawa-Centre
+            </h2>
+            <p
+              style={{
+                fontSize: "1.1rem",
+                lineHeight: "1.5",
+                maxWidth: "90%"
+              }}
+            >
+              Putting Canada first. Standing for families, freedom, and a future
+              built on common sense values.
+            </p>
+          </div>
 
-        {/* 👤 PLATFORM */}
-        <section
-          style={{ padding: "3rem 2rem", background: "#fff", color: "#111" }}
+          <div style={{ flex: "0 0 240px", textAlign: "center" }}>
+            <img
+              src={headshot}
+              alt="Candidate"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "320px",
+                objectFit: "cover",
+                border: "none",
+                borderRadius: "0",
+                boxShadow: "none"
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 🗳️ VOTING INFO SECTION */}
+      <section
+        style={{
+          backgroundColor: "rgba(30, 90, 150, 0.92)",
+          color: "#fff",
+          padding: "4rem 2rem",
+          opacity: 0,
+          transform: "translateY(40px)",
+          animation: "fadeUp 1s ease-out forwards",
+          animationDelay: "0.2s"
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "2rem",
+            justifyContent: "center"
+          }}
         >
-          <h2
-            style={{
-              textAlign: "center",
-              fontSize: "1.5rem",
-              marginBottom: "2rem"
-            }}
-          >
-            Key Priorities
+          <div style={{ flex: "1 1 400px", maxWidth: "600px" }}>
+            <h2 style={{ fontSize: "1.75rem", marginBottom: "1.5rem" }}>
+              Make Your Vote Count
+            </h2>
+            <p style={{ marginBottom: "1rem", fontSize: "1.1rem" }}>
+              <a
+                href="https://www.elections.ca/Scripts/vis/FindED?L=e&QID=-1&PAGEID=20"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#fff",
+                  fontWeight: "bold",
+                  textDecoration: "underline"
+                }}
+              >
+                Verify Your Voting Location Here
+              </a>
+            </p>
+            <p style={{ marginBottom: "2rem", fontSize: "1.1rem" }}>
+              Or call Elections Canada: <strong>1-866-546-7620</strong>
+            </p>
+            <h3 style={{ fontSize: "1.3rem", marginBottom: "1rem" }}>
+              Election Day:
+            </h3>
+            <p style={{ fontSize: "1.1rem", marginBottom: "2rem" }}>
+              <strong>APRIL 28</strong>
+              <br />7 AM – 7 PM
+            </p>
+            <h3 style={{ fontSize: "1.4rem", marginBottom: "1rem" }}>
+              A Safer, Smarter Canada
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, fontSize: "1.1rem" }}>
+              <li>✔ End Catch-and-Release for Repeat Offenders</li>
+              <li>✔ Life Sentences for Major Fentanyl Traffickers</li>
+              <li>✔ Ban Hard Drugs in Our Communities</li>
+              <li>✔ Cut Capital Gains Tax to Bring Jobs and Investment Back</li>
+            </ul>
+          </div>
+          <div style={{ flex: "1 1 300px", maxWidth: "500px" }}>
+            <img
+              src={ottawaMap}
+              alt="District Map"
+              style={{
+                width: "100%",
+                borderRadius: "8px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.4)",
+                marginBottom: "1rem"
+              }}
+            />
+            <p style={{ fontSize: "0.95rem" }}>
+              This is your local voting district. Make sure you’re registered at
+              the correct polling station.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 👤 MEET THE CANDIDATE SECTION */}
+      <section
+        style={{
+          position: "relative",
+          backgroundImage: `url(${meetBg})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "75%",
+          backgroundPosition: "center",
+          color: "#fff",
+          padding: "5rem 2rem"
+        }}
+      >
+        {/* grey overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(128,128,128,0.4)",
+            zIndex: 1
+          }}
+        />
+
+        <div style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
+          <h2 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>
+            Meet the Candidate
           </h2>
-          <div
+          <p
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "2rem"
+              fontSize: "1.1rem",
+              lineHeight: "1.6",
+              margin: "0 auto 2.5rem",
+              maxWidth: "900px"
             }}
           >
-            <div>
-              <h4>Education Reform</h4>
-              <p>Smaller class sizes, better resources, and fair funding.</p>
-            </div>
-            <div>
-              <h4>Healthcare Access</h4>
-              <p>Commitment to rural clinics and wait time reduction.</p>
-            </div>
-            <div>
-              <h4>Affordability & Families</h4>
-              <p>Affordable childcare and real solutions for cost-of-living.</p>
-            </div>
-          </div>
-        </section>
+            Jane Candidate is a dedicated Canadian who has spent over two
+            decades serving her community. With deep roots in Ottawa Centre,
+            Jane brings strong conservative values focused on family, fiscal
+            responsibility, and local prosperity. She believes in democracy,
+            freedom, and the importance of protecting Canadian values.
+          </p>
 
-        {/* 👤 MEDIA SECTION */}
-        <section
-          style={{
-            backgroundImage: `url(${canadaMapBlur})`,
-            backgroundAttachment: "fixed",
-            backgroundSize: "cover",
-            padding: "4rem 2rem",
-            color: "#fff",
-            textAlign: "center"
-          }}
-        >
-          <div
+          {/* Single combined image */}
+          <div style={{ marginBottom: "2.5rem" }}>
+            <img
+              src={togPolImg}
+              alt="Candidate with spouse"
+              style={{
+                width: "600px",
+                height: "auto",
+                maxWidth: "100%"
+              }}
+            />
+          </div>
+
+          <p
             style={{
-              backgroundColor: "rgba(0,0,0,0.5)",
-              padding: "2rem",
-              borderRadius: "8px",
-              maxWidth: "900px",
+              fontSize: "1.05rem",
+              lineHeight: "1.6",
+              maxWidth: "800px",
               margin: "0 auto"
             }}
           >
-            <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>
-              Watch Alex in the Community
-            </h2>
-            <p style={{ marginBottom: "1.5rem" }}>
-              From town halls to classroom visits — see the work in action.
-            </p>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "1rem"
-              }}
+            <strong>Donations are graciously accepted via:</strong>
+            <br />
+            1. Cheque to "Official Agent — Jane Candidate Campaign"
+            <br />
+            2. E-Transfer (please confirm name/address prior to sending)
+            <br />
+            <br />
+            For donation coordination, please email us at{" "}
+            <a
+              href="mailto:contact@janecandidate.ca"
+              style={{ color: "#aad6ff", textDecoration: "underline" }}
             >
-              <button style={buttonStyle}>Watch Video</button>
-              <button style={buttonStyle}>Read Interviews</button>
-            </div>
-          </div>
-        </section>
+              contact@janecandidate.ca
+            </a>{" "}
+            or call <strong>(555) 123-4567</strong>
+          </p>
+        </div>
+      </section>
 
-        {/* 👤 TESTIMONIALS */}
-        <section
-          style={{ padding: "3rem 2rem", background: "#f1f1f1", color: "#111" }}
-        >
-          <h2
-            style={{
-              textAlign: "center",
-              fontSize: "1.5rem",
-              marginBottom: "2rem"
-            }}
-          >
-            Community Endorsements
-          </h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "2rem"
-            }}
-          >
-            <blockquote style={quoteCard}>
-              <p>
-                “Alex has been a tireless advocate for our school board — we
-                trust them to represent us.”
-              </p>
-              <footer>— J. Turner, Parent Council Chair</footer>
-            </blockquote>
-            <blockquote style={quoteCard}>
-              <p>
-                “I’ve worked with many candidates. Alex’s heart is real and
-                their follow-through is unmatched.”
-              </p>
-              <footer>— M. Alvarez, Community Organizer</footer>
-            </blockquote>
-            <blockquote style={quoteCard}>
-              <p>
-                “This campaign actually listens to our concerns. Alex is what we
-                need.”
-              </p>
-              <footer>— D. Singh, Small Business Owner</footer>
-            </blockquote>
-          </div>
-        </section>
-
-        {/* 👤 FOOTER */}
-        <footer
+      {/* ⚪ FOOTER SECTION */}
+      <footer
+        style={{
+          backgroundColor: "#fff",
+          color: "#333",
+          padding: "1rem 2rem",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap"
+        }}
+      >
+        <div style={{ display: "flex", gap: "1rem", fontSize: "1.2rem" }}>
+          <a href="#" style={{ color: "#333", textDecoration: "none" }}>
+            📘
+          </a>
+          <a href="#" style={{ color: "#333", textDecoration: "none" }}>
+            🐦
+          </a>
+          <a href="#" style={{ color: "#333", textDecoration: "none" }}>
+            📸
+          </a>
+        </div>
+        <button
           style={{
-            background: "#111",
-            color: "#888",
-            padding: "1rem",
-            textAlign: "center"
+            backgroundColor: "#1e5a96",
+            color: "#fff",
+            border: "none",
+            padding: "0.5rem 1rem",
+            borderRadius: "5px",
+            fontSize: "0.95rem",
+            cursor: "pointer"
           }}
         >
-          © 2025 MeetYourCandidate.ca — All rights reserved
-        </footer>
-      </div>
-    </>
+          Contact Us
+        </button>
+      </footer>
+
+      {/* 🔧 FADE ANIMATION */}
+      <style>
+        {`
+          @keyframes fadeUp {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}
+      </style>
+    </div>
   );
 }
-
-// 🔧 STYLES
-const navLink = {
-  color: "#eee",
-  textDecoration: "none",
-  fontWeight: "500",
-  transition: "color 0.2s"
-};
-
-const buttonStyle = {
-  backgroundColor: "#000",
-  border: "1px solid #fff",
-  padding: "0.75rem 1.5rem",
-  borderRadius: "6px",
-  color: "#fff",
-  fontWeight: "bold",
-  cursor: "pointer",
-  fontSize: "1rem",
-  transition: "background-color 0.3s"
-};
-
-const quoteCard = {
-  background: "#fff",
-  padding: "1rem",
-  borderRadius: "8px",
-  boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
-  fontStyle: "italic",
-  display: "flex",
-  flexDirection: "column",
-  gap: "1rem"
-};

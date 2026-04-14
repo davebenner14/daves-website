@@ -16,8 +16,8 @@ export default function WorkExperience() {
       id: 2,
       src: "/Assets/slide2.jpg",
       link: "https://www.ptemployment.org/",
-      desc: "Pathways to Employment",
-      title: "Pathways to Employment",
+      desc: "Pathways to Possibilities",
+      title: "Pathways to Possibilities",
       details:
         "Rebuilt the entire frontend in React with a responsive, accessible UI; architected a Node/Express backend with RESTful APIs and PostgreSQL; implemented secure authentication (traditional + Google OAuth); integrated Stripe for live class payments and QuickBooks SDK for automated monthly billing; developed a real-time interactive calendar with class scheduling, notifications, and dynamic filters."
     },

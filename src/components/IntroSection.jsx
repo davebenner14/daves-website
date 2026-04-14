@@ -30,7 +30,7 @@ export default function IntroSection() {
     >
       {/* Video + overlayed content */}
       <div
-        className="relative w-full flex justify-center mb-8 mt-[40px]"
+        className="relative w-full flex justify-center mb-8 mt-[10px]"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -43,9 +43,9 @@ export default function IntroSection() {
           className="w-full h-auto object-contain"
         />
 
-        {/* Overlay content - higher */}
+        {/* Overlay content - VERY high now */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-start pt-[60px] pointer-events-none"
+          className="absolute inset-0 flex flex-col items-center justify-start pt-[20px] pointer-events-none"
           style={{
             fontFamily:
               "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"

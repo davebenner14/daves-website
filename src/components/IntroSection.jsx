@@ -68,7 +68,7 @@ export default function IntroSection() {
           >
             My name is David Benner. This site is designed to tell you a little
             bit about myself, show off some of my work experience, and highlight
-            some of my skills.
+            some of my skills
           </motion.p>
         </div>
       </div>

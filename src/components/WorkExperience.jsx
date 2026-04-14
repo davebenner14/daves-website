@@ -15,7 +15,7 @@ export default function WorkExperience() {
     {
       id: 2,
       src: "/Assets/slide2.jpg",
-      link: "https://www.ptemployment.org/",
+      link: "https://www.gop2p.org/",
       desc: "Pathways to Possibilities",
       title: "Pathways to Possibilities",
       details:
